@@ -1,3 +1,4 @@
 heyoo
-flask
 python-dotenv
+gunicorn
+requests
