@@ -39,6 +39,8 @@ def send_message():
 
 @app.get("/webhook")
 def verify_token():
+    logging.info(request.args.get("hub.verify_token"))
+    logging.info(VERIFY_TOKEN)
     if request.args.get("hub.verify_token") == VERIFY_TOKEN:
         logging.info("Verified webhook")
         response = make_response(request.args.get("hub.challenge"), 200)
