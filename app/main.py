@@ -53,7 +53,8 @@ def verify_token():
 def hook():
     # Handle Webhook Subscriptions
     data = request.get_json()
-    print(data)
+    logging.info(data)
+
     logging.info("Received webhook data: %s", data)
     changed_field = messenger.changed_field(data)
     if changed_field == "messages":
